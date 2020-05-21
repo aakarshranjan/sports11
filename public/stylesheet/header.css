@@ -1,0 +1,22 @@
+.container{
+    padding:10px;
+}
+.well{
+    background-color: #e8e8e8;
+    padding:9px;
+}
+.text-right{
+    padding-top:8px;
+}
+.thumbnail img{
+    width:100%;
+}
+.thumbnail .caption-full{
+    padding:9px;
+}
+.thumbnail{
+    padding: 0;
+}
+.deletebut{
+    display: inline;
+}
