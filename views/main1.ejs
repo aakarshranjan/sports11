@@ -9,21 +9,24 @@
     </head>
     <body>
        <nav class="navbar navbar-default" style="background-color: #93ffd6;">
-       	<div class="container-fluid">
-		<div class="navbar-header">
-            <a href="/main" class="navbar-brand">Sports11</a>
-		</div>
-		<div class="collapse navbar-collapse">
-		<ul class="nav navbar-nav navbar-right">
-			<li><a href="/about">About</a></li>
-			<li><a href="/api/logout">Logout</a></li>
-		</ul>
-		</div>
-		</div>
-        </nav>
-        
+       	    <div class="container-fluid">
+		        <div class="navbar-header">
+                    <a href="/main" class="navbar-brand">Sports11</a>
+		        </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/api/logout">Logout</a></li>
+                    </ul>
+                </div>
+		    </div>
+        </nav>   
         <div id="landing-header">
             <div style="width: 30%;margin: 0 auto;">
+                <% if(data.error) { %>
+                    <h4 style="background-color: white;"><%= data.error %></h4>
+                    <a href="/main" class="btn btn-lg btn-success">Go back</a>
+                <% } else { %>
                 <h1>Team Analysis</h1>
                 <table border="1" style="color: azure; background-color: black;">
                     <% for(let i=0;i< 3; i++) {%>
@@ -43,6 +46,7 @@
                     </tr>
                     <% } %>
                     </table>
+                <% } %>
             </div>
         </div>
     </body>

@@ -66,8 +66,10 @@ app.post('/api/ml', (req,res)=>{
     var sname = req.body.second;
     var fname = fname.charAt(0).toUpperCase() + fname.slice(1);
     var sname = sname.charAt(0).toUpperCase() + sname.slice(1);
+    let x=0;
     const process = spawn('python',["./match1.py", fname,sname]);
     process.stdout.on('data',(data)=>{
+        x=1;
         var data1 = data.toString();
         var data3 = data1.split("*");
         for(let i=0;i<3;i++){
@@ -82,6 +84,14 @@ app.post('/api/ml', (req,res)=>{
         };
         res.render('main1',{data:data2});
     })
+    setTimeout(()=>{
+        if(x==0){
+            var data2={
+                error:'Something went wrong! Please re enter the values again correctly'
+            }
+            res.render('main1',{data:data2});
+        }
+    },8000)
 });
 
 
