@@ -91,7 +91,7 @@ app.post('/api/ml', (req,res)=>{
             }
             res.render('main1',{data:data2});
         }
-    },8000)
+    },10000)
 });
 
 
